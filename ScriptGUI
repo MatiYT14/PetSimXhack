@@ -1,0 +1,132 @@
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local autofarm = Instance.new("TextButton")
+local antiafk = Instance.new("TextButton")
+local collectlootbags = Instance.new("TextButton")
+local titlev2 = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+main.Position = UDim2.new(0.33076176, 0, 0.24000001, 0)
+main.Size = UDim2.new(0.393503875, 0, 0.581133604, 0)
+main.Active = true
+main.Draggable = true
+
+title.Name = "title"
+title.Parent = main
+title.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+title.BorderColor3 = Color3.fromRGB(255, 255, 255)
+title.BorderSizePixel = 0
+title.Size = UDim2.new(1, 0, 0.142857149, 0)
+title.Font = Enum.Font.GothamBlack
+title.Text = "Script GUI By: Matix"
+title.TextColor3 = Color3.fromRGB(255, 0, 0)
+title.TextScaled = true
+title.TextSize = 14.000
+title.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+title.TextWrapped = true
+
+autofarm.Name = "autofarm"
+autofarm.Parent = main
+autofarm.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+autofarm.BorderSizePixel = 0
+autofarm.Position = UDim2.new(0.214285716, 0, 0.214285716, 0)
+autofarm.Size = UDim2.new(0.571428597, 0, 0.142857149, 0)
+autofarm.Font = Enum.Font.SourceSansBold
+autofarm.Text = "AUTOFARM"
+autofarm.TextColor3 = Color3.fromRGB(255, 0, 0)
+autofarm.TextScaled = true
+autofarm.TextSize = 14.000
+autofarm.TextWrapped = true
+script.Parent.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/si1nnx/psxx/main/g"))()
+end)
+
+antiafk.Name = "antiafk"
+antiafk.Parent = main
+antiafk.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+antiafk.BorderSizePixel = 0
+antiafk.Position = UDim2.new(0.213999987, 0, 0.63908571, 0)
+antiafk.Size = UDim2.new(0.571428597, 0, 0.142857149, 0)
+antiafk.Font = Enum.Font.SourceSansBold
+antiafk.Text = "ANTIAFK"
+antiafk.TextColor3 = Color3.fromRGB(255, 0, 0)
+antiafk.TextScaled = true
+antiafk.TextSize = 14.000
+antiafk.TextWrapped = true
+script.Parent.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/gdsfnf/anti-kick/main/anti%20kick"))();
+end)
+
+collectlootbags.Name = "collectlootbags"
+collectlootbags.Parent = main
+collectlootbags.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+collectlootbags.BorderSizePixel = 0
+collectlootbags.Position = UDim2.new(0.214285716, 0, 0.428571463, 0)
+collectlootbags.Size = UDim2.new(0.571428597, 0, 0.142857149, 0)
+collectlootbags.Font = Enum.Font.SourceSansBold
+collectlootbags.Text = "COLLECT LOOTBAGS"
+collectlootbags.TextColor3 = Color3.fromRGB(255, 0, 0)
+collectlootbags.TextScaled = true
+collectlootbags.TextSize = 14.000
+collectlootbags.TextWrapped = true
+script.Parent.MouseButton1Click:Connect(function()
+loadstring(game:GetObjects("rbxassetid://8194485654")[1].Source)("Petsi-X")
+end)
+
+titlev2.Name = "titlev2"
+titlev2.Parent = main
+titlev2.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+titlev2.BackgroundTransparency = 1.000
+titlev2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+titlev2.BorderSizePixel = 0
+titlev2.Position = UDim2.new(0, 0, 0.857142806, 0)
+titlev2.Size = UDim2.new(1, 0, 0.142857149, 0)
+titlev2.Font = Enum.Font.GothamBlack
+titlev2.Text = "Use RightShift to close the gui"
+titlev2.TextColor3 = Color3.fromRGB(255, 0, 0)
+titlev2.TextScaled = true
+titlev2.TextSize = 14.000
+titlev2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+titlev2.TextWrapped = true
+
+UICorner.CornerRadius = UDim.new(0, 15)
+UICorner.Parent = titlev2
+
+UICorner_2.CornerRadius = UDim.new(0, 15)
+UICorner_2.Parent = main
+
+-- Scripts:
+
+local function ABSLKC_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	local main = script.Parent.main
+	local Opened = false
+	
+	local PositionClosed = UDim2.new(0.331, 0,2, 0)
+	local PositionOpened = UDim2.new(0.331, 0,0.24, 0)
+	
+	local UserInputService = game:GetService("UserInputService")
+	
+	UserInputService.InputBegan:Connect(function(KeyCode)
+		if KeyCode.KeyCode == Enum.KeyCode.RightShift then
+			if Opened then
+				main:TweenPosition((PositionClosed), "InOut", "Quint")
+				Opened = false
+			else
+				main:TweenPosition((PositionOpened), "InOut", "Quart")
+				Opened = true
+			end
+		end
+	end)
+end
+coroutine.wrap(ABSLKC_fake_script)()
