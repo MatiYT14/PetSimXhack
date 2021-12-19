@@ -17,6 +17,7 @@ main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 main.Position = UDim2.new(0.33076176, 0, 0.24000001, 0)
 main.Size = UDim2.new(0.393503875, 0, 0.581133604, 0)
+main.Visible = true
 main.Active = true
 main.Draggable = true
 
@@ -104,8 +105,6 @@ UICorner.Parent = titlev2
 UICorner_2.CornerRadius = UDim.new(0, 15)
 UICorner_2.Parent = main
 
--- Scripts:
-
 local function ABSLKC_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
@@ -129,4 +128,3 @@ local function ABSLKC_fake_script() -- ScreenGui.LocalScript
 		end
 	end)
 end
-coroutine.wrap(ABSLKC_fake_script)()
