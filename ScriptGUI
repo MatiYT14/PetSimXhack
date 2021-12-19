@@ -17,8 +17,6 @@ main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 main.Position = UDim2.new(0.33076176, 0, 0.24000001, 0)
 main.Size = UDim2.new(0.393503875, 0, 0.581133604, 0)
-main.Visible = true
-main.Active = true
 main.Draggable = true
 
 title.Name = "title"
