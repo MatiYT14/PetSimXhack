@@ -1,0 +1,100 @@
+if game.PlaceId == 6284583030 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Pet Sim X   By: Matix", "BloodTheme")
+
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+    MainSection:NewToggle("AutoFarm", "Enable/Disable AutoFarm", function(state)
+        if state then
+            
+        else
+            
+        end
+    end)
+    MainSection:NewDropdown("Area", "Select Area to AutoFarm", {"Town", "Forest", "Beach", "Mine", "Winter", "Glacier", "Desert", "Volcano", "Enchanted Forest", "Ancient Island", "Samurai Island", "Candy Island", "Haunted Island", "Hell Island", "Heaven Island", "Heaven's Gate", "Tech City", "Dark Tech", "Steampunk", "Steampunk Chest", "Alien Lab", "Alien Forest", "Giant Alien Chest"}, function(currentOption)
+        print(currentOption)
+    end) 
+
+    -- PLAYER
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player")
+    PlayerSection:NewSlider("WalkSpeed", "Changes the WalkSpeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+    PlayerSection:NewSlider("JumpPower", "Changes the JumpPower", 250, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+
+    -- PETS
+    local Pets = Window:NewTab("Pets")
+    local PetsSection = Pets:NewSection("Pets")
+    PetsSection:NewToggle("Open Eggs (tylko christmas tu masz te najlepsze za 1.25m gingerbread)", "Enable/Disable Open Eggs", function(state)
+        if state then
+            _G.AutoFarm = false;
+            while _G.AutoFarm == true do
+            local args = {
+                [1] = {
+                    [1] = "Egg of Many Gifts",
+                    [2] = false
+                }
+            }
+            workspace.__THINGS.__REMOTES:FindFirstChild("buy egg"):InvokeServer(unpack(args))
+                wait()
+            end
+        else
+            _G.AutoFarm = false;
+            while _G.AutoFarm == true do
+            local args = {
+                [1] = {
+                    [1] = "Egg of Many Gifts",
+                    [2] = false
+                }
+            }
+            workspace.__THINGS.__REMOTES:FindFirstChild("buy egg"):InvokeServer(unpack(args))
+                wait()
+            end
+        end
+    end)
+    PetsSection:NewDropdown("Eggs", "Select Eggs to Open", {"Golden Metal Egg"}, function(currentOption)
+
+    end) 
+
+
+    -- SETTINGS
+    local Settings = Window:NewTab("Settings")
+    local SettingsSection = Settings:NewSection("Settings")
+    SettingsSection:NewToggle("Reedem Rank Rewards", "Reedeming Rank Rewards", function(state)
+        if state then
+            workspace.__THINGS.__REMOTES:FindFirstChild("redeem rank rewards"):InvokeServer(unpack(args))
+        else
+            
+        end
+    end)
+    SettingsSection:NewToggle("Collect Orbs", "Collecting Orbs", function(state)
+        if state then
+           
+        else
+            
+        end
+    end)
+    SettingsSection:NewToggle("Collect Lootbags", "Collecting Lootbags", function(state)
+        if state then
+           
+        else
+            
+        end
+    end)
+    SettingsSection:NewButton("Unlock Gamepasses", "Unlocked Gamepasses", function()
+        local main = debug.getupvalues(require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library")).Save.Get)[2][game.Players.LocalPlayer].save.Gamepasses
+        table.insert(main,18674296) --teleport
+        table.insert(main,18674305) --vip
+        table.insert(main,18674321) --skip
+        table.insert(main,21176989) --autohatch
+        table.insert(main,21583760) --lucky
+        table.insert(main,21641016) --mythical
+    end)
+    SettingsSection:NewKeybind("KeybindText", "Use RightShift to close the gui", Enum.KeyCode.RightShift, function()
+        Library:ToggleUI()
+    end)
+end
