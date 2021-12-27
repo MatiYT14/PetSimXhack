@@ -36,7 +36,7 @@ if game.PlaceId == 6284583030 then
             local args = {
                 [1] = {
                     [1] = "Egg of Many Gifts",
-                    [2] = false
+                    [2] = true
                 }
             }
             workspace.__THINGS.__REMOTES:FindFirstChild("buy egg"):InvokeServer(unpack(args))
@@ -52,7 +52,6 @@ if game.PlaceId == 6284583030 then
                 }
             }
             workspace.__THINGS.__REMOTES:FindFirstChild("buy egg"):InvokeServer(unpack(args))
-                wait()
             end
         end
     end)
