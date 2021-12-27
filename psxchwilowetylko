@@ -31,7 +31,7 @@ if game.PlaceId == 6284583030 then
     local PetsSection = Pets:NewSection("Pets")
     PetsSection:NewToggle("Open Eggs (tylko christmas tu masz te najlepsze za 1.25m gingerbread)", "Enable/Disable Open Eggs", function(state)
         if state then
-            _G.AutoFarm = false;
+            _G.AutoFarm = true;
             while _G.AutoFarm == true do
             local args = {
                 [1] = {
@@ -43,7 +43,7 @@ if game.PlaceId == 6284583030 then
                 wait()
             end
         else
-            _G.AutoFarm = true;
+            _G.AutoFarm = false;
             while _G.AutoFarm == true do
             local args = {
                 [1] = {
