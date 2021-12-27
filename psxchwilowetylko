@@ -40,7 +40,6 @@ if game.PlaceId == 6284583030 then
                 }
             }
             workspace.__THINGS.__REMOTES:FindFirstChild("buy egg"):InvokeServer(unpack(args))
-                wait()
             end
         else
             _G.AutoFarm = false;
