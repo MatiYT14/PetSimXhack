@@ -43,7 +43,7 @@ if game.PlaceId == 6284583030 then
                 wait()
             end
         else
-            _G.AutoFarm = false;
+            _G.AutoFarm = true;
             while _G.AutoFarm == true do
             local args = {
                 [1] = {
